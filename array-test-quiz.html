@@ -1,0 +1,39 @@
+<html>
+
+<body>
+    <div id="display"></div>
+    <script>
+        const stopWords = "'ll 's 'm a about above after again against all am an and any are aren't as at be because been before being below between both but by can can't cannot could couldn't did didn't do does doesn't doing don't down during each few for from further had hadn't has hasn't have haven't having he he'd he'll he's her here here's hers herself him himself his how how's i i'd i'll i'm i've if in into is isn't it it's its itself let's me more most mustn't my myself no nor not of off on once only or other ought our ours ourselves out over own same shan't she she'd she'll she's should shouldn't so some such than that that's the their theirs them themselves then there there's these they they'd they'll they're they've this those through to too under until up very was wasn't we we'd we'll we're we've were weren't what what's when when's where where's which while who who's whom why why's with won't would wouldn't you you'd you'll you're you've your yours yourself yourselves ### return arent cant couldnt didnt doesnt dont hadnt hasnt havent hes heres hows im isnt its lets mustnt shant shes shouldnt thats theres theyll theyre theyve wasnt were werent whats whens wheres whos whys wont wouldnt youd youll youre youve".split(" ");
+
+        const text = "The modern Olympic Games or Olympics (French: Jeux olympiques) are leading international sporting events featuring summer and winter sports competitions in which thousands of athletes from around the world participate in a variety of competitions. The Olympic Games are considered the world's foremost sports competition with more than 200 nations participating. The Olympic Games are normally held every four years, alternating between the Summer and Winter Olympics every two years in the four-year period. Their creation was inspired by the ancient Olympic Games (Ancient Greek: Ὀλυμπιακοί Ἀγῶνες), held in Olympia, Greece from the 8th century BC to the 4th century AD. Baron Pierre de Coubertin founded the International Olympic Committee (IOC) in 1894, leading to the first modern Games in Athens in 1896. The IOC is the governing body of the Olympic Movement, with the Olympic Charter defining its structure and authority. The evolution of the Olympic Movement during the 20th and 21st centuries has resulted in several changes to the Olympic Games. Some of these adjustments include the creation of the Winter Olympic Games for snow and ice sports, the Paralympic Games for athletes with disabilities, the Youth Olympic Games for athletes aged 14 to 18, the five Continental games (Pan American, African, Asian, European, and Pacific), and the World Games for sports that are not contested in the Olympic Games. The IOC also endorses the Deaflympics and the Special Olympics. The IOC has needed to adapt to a variety of economic, political, and technological advancements. The abuse of amateur rules by the Eastern Bloc nations prompted the IOC to shift away from pure amateurism, as envisioned by Coubertin, to the acceptance of professional athletes participating at the Games. The growing importance of mass media has created the issue of corporate sponsorship and general commercialisation of the Games. World wars led to the cancellation of the 1916, 1940, and 1944 Olympics; large-scale boycotts during the Cold War limited participation in the 1980 and 1984 Olympics; and the 2020 Olympics were postponed until 2021 as a result of the COVID-19 pandemic. The Olympic Movement consists of international sports federations (IFs), National Olympic Committees (NOCs), and organising committees for each specific Olympic Games. As the decision-making body, the IOC is responsible for choosing the host city for each Games, and organises and funds the Games according to the Olympic Charter. The IOC also determines the Olympic programme, consisting of the sports to be contested at the Games. There are several Olympic rituals and symbols, such as the Olympic flag and torch, as well as the opening and closing ceremonies. Over 14,000 athletes competed at the 2016 Summer Olympics and 2018 Winter Olympics combined, in 35 different sports and over 400 events. The first, second, and third-place finishers in each event receive Olympic medals: gold, silver, and bronze, respectively. The Games have grown so much that nearly every nation is now represented. This growth has created numerous challenges and controversies, including boycotts, doping, bribery, and a terrorist attack in 1972. Every two years the Olympics and its media exposure provide athletes with the chance to attain national and sometimes international fame. The Games also provide an opportunity for the host city and country to showcase themselves to the world.";
+
+        let re = /\s|;|,|:|\.|\(|\)/;
+        let tokens; // TODO: 請將tokens設定為text運用正規表示式re後的切割結果
+
+        // 底下將array轉成set以消除重複元素，再轉成陣列uniqueTokens
+        let mySet = new Set(tokens);
+        let uniqueTokens = Array.from(mySet);
+
+        // TODO: 請用迴圈將uniqueTokens內所有元素都轉為全小寫
+
+        let results = [];
+
+        for (let index in uniqueTokens) {
+            let isKeyword = true;
+
+            // TODO: 如果uniqueTokens[index]是數字或程度<=2，把isKeyword設定成false
+
+            // TODO: 如果uniqueTokens[index]是stop word (stopWords的元素)，就把isKeyword設定成false
+
+            if (isKeyword) {
+                results.push(uniqueTokens[index]); // 把關鍵字推入新陣列
+            }
+        }
+        
+        let combinedResults; // TODO: 將所有關鍵字以<br>串接起來
+
+        document.getElementById("display").innerHTML = combinedResults;
+    </script>
+</body>
+
+</html>
